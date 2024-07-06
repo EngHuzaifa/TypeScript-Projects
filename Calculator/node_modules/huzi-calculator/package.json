@@ -1,0 +1,25 @@
+{
+  "name": "huzi-calculator",
+  "version": "1.2.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "huzi-cli": "index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/chalk-animation": "^1.6.3",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.5",
+    "chalk": "^5.3.0",
+    "chalk-animation": "^2.0.3",
+    "huzi-calculator": "^1.1.0",
+    "inquirer": "^9.2.12"
+  }
+}
