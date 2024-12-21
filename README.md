@@ -26,47 +26,47 @@ Before starting with these projects, ensure you have:
 
 ## Projects List
 
-###1. ATM
+## 1. ATM
 
--Simulated ATM operations
--Account balance management
--Secure transactions
--User authentication
+- Simulated ATM operations
+- Account balance management
+- Secure transactions
+- User authentication
 
-###2. Calculator
+## 2. Calculator
 
--Command-line calculator application
--Basic arithmetic operations
--Scientific calculations
--History tracking
+- Command-line calculator application
+- Basic arithmetic operations
+- Scientific calculations
+- History tracking
 
-###3. Quiz App
+## 3. Quiz App
 
--Interactive quiz application
--Multiple choice questions
--Score tracking
--Timer functionality
+- Interactive quiz application
+- Multiple choice questions
+- Score tracking
+- Timer functionality
 
-###4. Todo List
+## 4. Todo List
 
--Task management system
--Add, delete, and update tasks
--Task priority setting
--Task completion tracking
+- Task management system
+- Add, delete, and update tasks
+- Task priority setting
+- Task completion tracking
 
-###5. Number Guessing Game
+## 5. Number Guessing Game
 
--Interactive number guessing game
--Random number generation
--Score tracking
--Difficulty levels
+- Interactive number guessing game
+- Random number generation
+- Score tracking
+- Difficulty levels
 
-###6. Word Counter
+## 6. Word Counter
 
--Text analysis tool
--Word and character counting
--Whitespace handling
--Special character detection
+- Text analysis tool
+- Word and character counting
+- Whitespace handling
+- Special character detection
 
 ## Learning Path
 
