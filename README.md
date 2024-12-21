@@ -26,21 +26,47 @@ Before starting with these projects, ensure you have:
 
 ## Projects List
 
-### 1. CLI Calculator
-- A command-line calculator application
-- Features: Addition, subtraction, multiplication, division
-- Uses inquirer.js for user input
+###1. ATM
 
-### 2. Number Guessing Game
-- Interactive number guessing game
-- Random number generation
-- Score tracking
+-Simulated ATM operations
+-Account balance management
+-Secure transactions
+-User authentication
 
+###2. Calculator
 
-### 3. ATM Machine
-- Simulated ATM operations
-- Account management
-- Transaction history
+-Command-line calculator application
+-Basic arithmetic operations
+-Scientific calculations
+-History tracking
+
+###3. Quiz App
+
+-Interactive quiz application
+-Multiple choice questions
+-Score tracking
+-Timer functionality
+
+###4. Todo List
+
+-Task management system
+-Add, delete, and update tasks
+-Task priority setting
+-Task completion tracking
+
+###5. Number Guessing Game
+
+-Interactive number guessing game
+-Random number generation
+-Score tracking
+-Difficulty levels
+
+###6. Word Counter
+
+-Text analysis tool
+-Word and character counting
+-Whitespace handling
+-Special character detection
 
 ## Learning Path
 
