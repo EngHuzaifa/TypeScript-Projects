@@ -1,28 +1,46 @@
-#! /usr/bin/env node
+#!/usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-console.log(chalk.magenta("Let's start number gues6sing game"));
-type ansType = {
-    userGuess: number
-}
+const MIN_NUMBER = 1;
+const MAX_NUMBER = 10;
 
-const systemGeneratedNo = Math.floor(Math.random() * 10);
+type Answer = {
+    userGuess: number;
+};
 
+async function playGame(): Promise<void> {
+    console.log(chalk.magenta("Welcome to the Number Guessing Game!"));
+    console.log(chalk.cyan(`Guess a number between ${MIN_NUMBER} and ${MAX_NUMBER}.`));
 
-const answers : ansType = await inquirer.prompt([
-    {
-        type: "number",
-        name: "userGuess",
-        message: "Write your guess b/w 1 to 10 ? "
+    const systemGeneratedNo = Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER + 1)) + MIN_NUMBER;
+
+    try {
+        const answer: Answer = await inquirer.prompt([
+            {
+                type: "number",
+                name: "userGuess",
+                message: "Enter your guess:",
+                validate: (input: number) => {
+                    if (isNaN(input) || input < MIN_NUMBER || input > MAX_NUMBER) {
+                        return `Please enter a valid number between ${MIN_NUMBER} and ${MAX_NUMBER}.`;
+                    }
+                    return true;
+                }
+            }
+        ]);
+
+        const { userGuess } = answer;
+
+        if (userGuess === systemGeneratedNo) {
+            console.log(chalk.green("Congratulations! Your guess is correct. You win!"));
+        } else {
+            console.log(chalk.red(`Sorry, that's not correct. The number was ${systemGeneratedNo}.`));
+            console.log(chalk.yellow("Better luck next time!"));
+        }
+    } catch (error) {
+        console.error(chalk.red("An error occurred:"), error);
     }
-])
-
-const {userGuess} = answers;
-
-console.log(userGuess, "userGuess", systemGeneratedNo, 'SYs');
-if(userGuess === systemGeneratedNo){
-    console.log(chalk.blue("Yeaaaa Your answer is correct \n You Win!"));
-} else {
-    console.log(chalk.blueBright("Please try again Better luck next time!"));
 }
+
+playGame();
