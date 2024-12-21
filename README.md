@@ -4,7 +4,7 @@ This repository contains a collection of TypeScript projects demonstrating vario
 
 ## Projects Overview
 
-1. **PIAIC ATM**
+1. **ATM**
    - A command-line ATM simulator
    - Features: User authentication, balance inquiry, withdrawals, and deposits
    - Last updated: 2 days ago
@@ -33,11 +33,7 @@ This repository contains a collection of TypeScript projects demonstrating vario
    - A utility to count words in text
    - Features: Character count, word count, sentence count
 
-## Prerequisites
 
-- Node.js (version 14.0 or higher)
-- TypeScript (version 4.0 or higher)
-- npm or yarn package manager
 
 ## Installation
 
