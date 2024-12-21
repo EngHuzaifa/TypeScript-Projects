@@ -1,42 +1,51 @@
 import inquirer from "inquirer";
 
-
+// Initialize an empty array to store todos
 let todos: string[] = [];
-let loop = true;
+let continueLoop = true;
 
-while(loop){
-    const answers : {
-        TODO: string,
-        addmore: boolean
-    }= await inquirer.prompt([
-        {
-            type: "input",
-            name: "TODO",
-            message: "What do you want to add in your todo? "
-        },
-        {
-            type: "confirm",
-            name: "addmore",
-            message: "Do you want to add more todo? ",
-            default: false
+async function main() {
+    while (continueLoop) {
+        try {
+            // Prompt user for todo item and if they want to add more
+            const answers: { todoItem: string; addMore: boolean } = await inquirer.prompt([
+                {
+                    type: "input",
+                    name: "todoItem",
+                    message: "What do you want to add to your todo list? ",
+                },
+                {
+                    type: "confirm",
+                    name: "addMore",
+                    message: "Do you want to add more todos? ",
+                    default: false,
+                },
+            ]);
+
+            const { todoItem, addMore } = answers;
+            continueLoop = addMore;
+
+            // Validate and add todo item to the list
+            if (todoItem.trim()) {
+                todos.push(todoItem.trim());
+            } else {
+                console.log("Please provide a valid input.");
+            }
+        } catch (error) {
+            console.error("An error occurred while adding your todo:", error);
         }
-    ])
-    const {TODO, addmore} = answers;
-    console.log(answers)
-     loop = addmore
-    if(TODO) {
-        todos.push(TODO)
+    }
+
+    // Display the todo list
+    if (todos.length > 0) {
+        console.log("Your Todo List:");
+        todos.forEach((todo, index) => {
+            console.log(`${index + 1}. ${todo}`);
+        });
     } else {
-        console.log("Kindly add valid input")
+        console.log("No todos found.");
     }
 }
 
-if(todos.length > 0){
-    console.log("Your TOdo List")
-    todos.forEach(todo => {
-        console.log(todo)
-    });
-} else {
-    console.log("No todos found")
-}
-
+// Execute the main function
+main();
