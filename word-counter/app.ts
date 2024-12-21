@@ -1,21 +1,23 @@
 import chalk from "chalk";
 import inquirer from "inquirer";
 
-console.log(chalk.green("Welcome to the word counter app!"));
+console.log(chalk.green("Welcome to the Word Counter App!"));
 
-const answers:{
-    
-    sentence:string
+async function getSentence(): Promise<string> {
+    const answers = await inquirer.prompt<{ sentence: string }>([
+        {
+            type: "input",
+            name: "sentence",
+            message: "Please enter a sentence to count the words:",
+        },
+    ]);
+    return answers.sentence;
+}
 
-}= await inquirer.prompt([
-    {
-        type:"input",
-        name:"sentence",
-        message:"Enter your sentence to count the word : "
+async function countWords() {
+    const sentence = await getSentence();
+    const words = sentence.trim().split(/\s+/);
+    console.log(`The sentence contains ${words.length} words.`);
+}
 
-        
-    }
-]);
-
-const words=answers.sentence.trim().split(" ")
-console.log(words);
+countWords();
